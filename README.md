@@ -25,6 +25,8 @@ The goal of this template is to provide a consistent framework for generating ex
         - [Read-The-Docs Theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/) > pip install sphinx_rtd_theme
         - [Breathe](https://www.breathe-doc.org/) > pip install breathe
 
-In ```CMakeLists.txt```, change TargetName and ProjectName to align with the project being created.
+In ```CMakeLists.txt```, change ```TargetName``` and ```ProjectName``` to align with the project being created.
+
+In ```docs/Doxyfile``` change ```PROJECT_NAME``` to align with project being created.
 
 Any source files in ```/include``` and ```/src``` are included for the sake of example, and should be deleted.
