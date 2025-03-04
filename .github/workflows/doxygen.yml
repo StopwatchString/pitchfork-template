@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Trigger on pushes to main
 
+permissions:
+  contents: write
+
 jobs:
   generate-docs:
     runs-on: ubuntu-latest
@@ -25,7 +28,7 @@ jobs:
 
       - name: Deploy Documentation to 'docs' Branch
         env: 
-          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
