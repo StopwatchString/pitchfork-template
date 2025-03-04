@@ -1,9 +1,13 @@
-name: Generate Doxygen Docs
+name: Doxygen
 
 on:
   push:
     branches:
       - main  # Trigger on pushes to main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
