@@ -1,5 +1,7 @@
 # Pitchfork Layout Template
 
+![CI](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/ci.yml/badge.svg)
+
 ## Description
 
 A C++ CMake project template mostly based on the [pitchfork](https://joholl.github.io/pitchfork-website/) template schema, with some opinionated additional specifications.
