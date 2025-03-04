@@ -1,0 +1,39 @@
+name: Generate Doxygen Docs
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to main
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensure full history for branch switching
+
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen graphviz
+
+      - name: Generate Documentation
+        run: |
+          cd docs
+          doxygen Doxyfile
+
+      - name: Deploy Documentation to 'docs' Branch
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          
+          git checkout --orphan docs  # Create a new docs branch if it doesn't exist
+          git rm -rf .  # Remove everything to only push documentation
+
+          mv docs/html/* .  # Move generated documentation (assuming Doxygen outputs to 'html')
+          rm -rf docs  # Cleanup
+
+          git add .
+          git commit -m "Update Doxygen documentation"
+          git push --force origin docs
