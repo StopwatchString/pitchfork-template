@@ -31,20 +31,3 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
-
-      - name: Deploy Documentation to 'docs' Branch
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          
-          git checkout --orphan docs  # Create a new docs branch if it doesn't exist
-          git rm -rf .  # Remove everything to only push documentation
-
-          mv docs/html/* .  # Move generated documentation (assuming Doxygen outputs to 'html')
-          rm -rf docs  # Cleanup
-
-          git add .
-          git commit -m "Update Doxygen documentation"
-          git push --force origin docs
