@@ -1,6 +1,7 @@
 # Pitchfork Layout Template
 
-![CI](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/ci.yml/badge.svg)
+![Linux Tests](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/linux_tests.yml/badge.svg)
+![Windows Tests](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/windows_tests.yml/badge.svg)
 
 ## Description
 
