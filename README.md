@@ -34,3 +34,6 @@ In ```CMakeLists.txt```, change ```TargetName``` and ```ProjectName``` to align 
 In ```docs/Doxyfile``` change ```PROJECT_NAME``` to align with project being created.
 
 Any source files in ```/include``` and ```/src``` are included for the sake of example, and should be deleted.
+
+## Docs
+[Docs Site](https://stopwatchstring.github.io/pitchfork-template)
