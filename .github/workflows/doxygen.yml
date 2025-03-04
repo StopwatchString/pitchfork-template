@@ -26,6 +26,12 @@ jobs:
           cd docs
           doxygen Doxyfile
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+
       - name: Deploy Documentation to 'docs' Branch
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
