@@ -2,6 +2,7 @@
 
 ![Linux Tests](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/linux_tests.yml/badge.svg)
 ![Windows Tests](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/windows_tests.yml/badge.svg)
+![Docs](https://github.com/stopwatchstring/pitchfork-template/actions/workflows/doxygen.yml/badge.svg)
 
 ## Description
 
