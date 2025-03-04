@@ -6,7 +6,7 @@ on:
       - main  # Trigger on pushes to main
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: doxygen-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
