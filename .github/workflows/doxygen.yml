@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Trigger on pushes to main
+  workflow_dispatch:
 
 concurrency:
   group: doxygen-${{ github.ref }}
