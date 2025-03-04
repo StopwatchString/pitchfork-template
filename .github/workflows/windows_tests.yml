@@ -1,4 +1,4 @@
-name: CI
+name: Windows Tests
 
 on:
   push:
@@ -7,21 +7,14 @@ on:
     branches: main
 
 jobs:
-  build-and-test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]  # Test on Ubuntu and Windows
-    runs-on: ${{ matrix.os }}
+  build-and-test-windows:
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
-      - name: Install dependencies (Ubuntu)
-        if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y cmake ninja-build g++
 
       - name: Configure CMake (Release mode)
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release
