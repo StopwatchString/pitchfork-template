@@ -52,7 +52,9 @@ target_link_libraries(${TARGET_NAME} PRIVATE ${TARGET_NAME}_lib)
 
 # ------------------ TESTING ------------------
 # Add Google Test
+set(CMAKE_FOLDER "external/GoogleTest")
 add_subdirectory(external/googletest)
+set(CMAKE_FOLDER "")
 
 enable_testing()
 
@@ -74,11 +76,6 @@ gtest_discover_tests(${TARGET_NAME}_tests)
 
 # --------------- MSVC Settings ---------------
 if (MSVC)
-    # Organize Google Test targets into a subfolder in Visual Studio
-    set_target_properties(gtest gtest_main gmock gmock_main
-        PROPERTIES FOLDER "GoogleTest"
-    )
-
     # Set Visual Studio startup project as our main target (normally VS will default to BUILD_ALL)
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${TARGET_NAME})
 
