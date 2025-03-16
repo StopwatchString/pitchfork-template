@@ -10,8 +10,9 @@ A C++ CMake project template mostly based on the [pitchfork](https://joholl.gith
 
 The goal of this template is to provide a consistent framework for generating exports, documentation, and testing around any C++ project. I created it out of frustration with managing a myriad of different methods between my own libraries. Adherence to this template asserts these facts to be true:
 
-- Private headers, all source files, and all test files are stored adjacently within ```/src```
+- Private headers and source files are stored in ```/src```
 - Public headers which could be included in an external project are stored within ```/include```
+- Tests for components are named identically to the components they test, and are stored in ```/tests```
 - Namespaces are doubly represented by folder structure
 - All external code and dependencies is stored in ```/external```, no exceptions. Given a project ```PROJECT```, its contents are stored under ```external/PROJECT``` such that its inclusion in the primary ```CMakeLists.txt``` is never different than ```add_subdirectory(external/PROJECT)```. If required, an 'adapter' ```CMakeLists.txt``` may be created such that the real project is stored in ```external/PROJECT/PROJECT``` while files required for making an adapter live in the folder above.
 - Google Test is the test framework

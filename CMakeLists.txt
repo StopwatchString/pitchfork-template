@@ -28,9 +28,9 @@ set(PUBLIC_HEADERS
 # Generally every hpp/cpp combo should have a matching [filename].test.cpp.
 # Header-only should also receive test files.
 set(TEST_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/Component.test.cpp
-    ${CMAKE_SOURCE_DIR}/src/namespace/SubComponent.test.cpp
-    ${CMAKE_SOURCE_DIR}/src/PublicComponent.test.cpp
+    ${CMAKE_SOURCE_DIR}/tests/Component.test.cpp
+    ${CMAKE_SOURCE_DIR}/tests/namespace/SubComponent.test.cpp
+    ${CMAKE_SOURCE_DIR}/tests/PublicComponent.test.cpp
 )
 
 # -------------- PROJECT LIBRARY --------------
@@ -88,4 +88,5 @@ if (MSVC)
     source_group(TREE ${CMAKE_SOURCE_DIR}/src PREFIX "Source Files" FILES ${SOURCES})
     source_group(TREE ${CMAKE_SOURCE_DIR}/src PREFIX "Private Header Files" FILES ${PRIVATE_HEADERS})
     source_group(TREE ${CMAKE_SOURCE_DIR}/include PREFIX "Public Header Files" FILES ${PUBLIC_HEADERS})
+    source_group(TREE ${CMAKE_SOURCE_DIR}/tests PREFIX "Tests" FILES ${TEST_SOURCES})
 endif()
