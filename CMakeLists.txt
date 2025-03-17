@@ -110,7 +110,10 @@ if (MSVC)
     # Enable Multiprocessor compile on targets
     target_compile_options(${TARGET_NAME}_lib PRIVATE /MP)
     target_compile_options(${TARGET_NAME} PRIVATE /MP)
-    target_compile_options(${TARGET_NAME}_tests PRIVATE /MP)
+
+    if (${TARGET_NAME}_BUILD_TESTS)
+        target_compile_options(${TARGET_NAME}_tests PRIVATE /MP)
+    endif()
 
     # Provides folder tree in visual studio filters
     source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src PREFIX "Source Files" FILES ${SOURCES})
