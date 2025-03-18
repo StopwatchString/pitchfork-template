@@ -17,9 +17,6 @@ else()
     set(FOLDER_TARGET "${TARGET_NAME}/")
 endif()
 
-# ------ DEFAULT OPTIONS FOR SUBPROJECTS ------
-# Subprojects added directly to this project should have their options set here
-
 # Environment settings
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
